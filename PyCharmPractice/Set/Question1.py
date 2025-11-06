@@ -7,7 +7,7 @@
 arr = [1,2,3,4,5,6,7,8,9,10]
 x = 6
 
-def setExclusion(vals,val):
+def setexclusion(vals,val):
     fin = set()
     outval = set()
 
@@ -22,4 +22,4 @@ def setExclusion(vals,val):
     print(fins)
 
 
-setExclusion(arr,x)
+setexclusion(arr,x)
