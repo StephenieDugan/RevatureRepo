@@ -11,13 +11,21 @@ public class Savings extends Bank implements SimpleInterest
 
     public void deposit(double amount)
     {
-        super.deposit(amount);
+        if(amount<0)
+            throw new ArithmeticException("can't use negative values");
+        else
+            super.deposit(amount);
     }
 
     @Override
-    public void withdraw(double amount)
+    public void withdraw(double amount) throws UnavailableBalanceException
     {
-        super.setBalance(super.getBalance()-amount);
+        if(amount<0)
+            throw new ArithmeticException("can't use negative values");
+        else if(super.getBalance()-amount < 5000)
+            throw new ArithmeticException("This puts your balance below $5,000");
+        else
+            super.setBalance(super.getBalance()-amount);
     }
 
 

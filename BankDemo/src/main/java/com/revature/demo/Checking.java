@@ -12,15 +12,23 @@ public class Checking extends Bank
 
     public void deposit(double amount)
     {
-        super.deposit(amount);
+        if(amount<0)
+            throw new ArithmeticException("can't use negative values");
+        else
+            super.deposit(amount);
     }
 
     @Override
-    public void withdraw(double amount)
+    public void withdraw(double amount) throws UnavailableBalanceException
     {
 //        double sur = (amount * 0.01)/100;
 //        amount = amount + sur;
-        super.setBalance(super.getBalance()-(amount + ((amount*0.01)/100)));
+        if(amount<0)
+            throw new ArithmeticException("can't use negative values");
+        else if ((super.getBalance()-(amount + ((amount*0.01)/100))) < 5000)
+            throw new ArithmeticException("This puts your balance below $5,000");
+        else
+            super.setBalance(super.getBalance()-(amount + ((amount*0.01)/100)));
     }
 
     @Override

@@ -52,5 +52,5 @@ public abstract class Bank
         this.balance += amount;
     }
 
-    public abstract void withdraw(double amount);
+    public abstract void withdraw(double amount) throws UnavailableBalanceException;
 }
