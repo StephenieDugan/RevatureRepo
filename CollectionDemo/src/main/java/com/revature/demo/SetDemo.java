@@ -8,8 +8,8 @@ import java.util.TreeSet;
 public class SetDemo
 {
     static void main(String[] args) {
-        Set<String> v = new LinkedHashSet<String>(); //maintain insertion order
-        //Set<String> v = new HashSet<String>(); //maintain insertion order unsorted
+        //Set<String> v = new LinkedHashSet<String>(); //maintain insertion order
+        Set<String> v = new HashSet<String>(); //maintain insertion order unsorted
         //Set<String> v = new TreeSet<String>(); //maintain insertion order sorted
 
         v.add("Why");
